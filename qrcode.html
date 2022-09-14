@@ -24,7 +24,7 @@
         video: document.getElementById("preview"),
       });
       scanner.addListener("scan", (content) => {
-        alert(content);
+        console.log(content);
         //window.open(content, "_blank");
       });
 
@@ -32,7 +32,7 @@
         .then(function (cameras) {
           if (cameras.length > 0) {
             scanner.start(cameras[0]);
-            alert(cameras);
+            console.log(cameras);
           } else {
             console.error("não encontrou a camera");
           }
