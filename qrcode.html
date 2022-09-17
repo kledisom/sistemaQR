@@ -6,51 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>leitor QR</title>
-    <style>
-      video {
-        border: 2px solid red;
-        /*    height: 500px;
-        width: 500px; */
-      }
-    </style>
+    <link rel="styleSheet" href="./style/style.css" />
   </head>
   <body>
-    <video id="preview"></video>
+    <main id="container">
+      <div id="qr-result"></div>
+      <div class="view-port-qr">
+        <video id="preview"></video>
+      </div>
+    </main>
 
     <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
-
-    <script>
-      let scanner = new Instascan.Scanner({
-        video: document.getElementById("preview"),
-      });
-      scanner.addListener("scan", (content) => {
-        console.log(content);
-        //window.open(content, "_blank");
-      });
-
-      Instascan.Camera.getCameras()
-        .then(function (cameras) {
-          if (cameras.length > 0) {
-            scanner.start(cameras[0]);
-            console.log(cameras);
-          } else {
-            console.error("não encontrou a camera");
-          }
-        })
-        .catch(function (e) {
-          console.error(e);
-        });
-
-      /*       navigator.mediaDevices
-        .getUserMedia({ video: true })
-        .then(function (mediaStream) {
-          const video = document.querySelector("#preview");
-          video.srcObject = mediaStream;
-          video.play();
-        })
-        .catch(function (err) {
-          console.log("Não há permissões para acessar a webcam");
-        }); */
-    </script>
+    <script src="./js/script.js"></script>
   </body>
 </html>

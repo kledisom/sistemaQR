@@ -1,0 +1,28 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    border: 2px solid violet;
+    background-color: #161616;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+.view-port-qr {
+    border: 2px solid #000;
+    height: auto;
+    width: 200px;
+}
+
+video {
+    height: 100%;
+    width: 100%;
+}
