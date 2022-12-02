@@ -1,1 +1,1 @@
-# https://kledisom.github.io/sistemaQR/
+# https://kledisom.github.io/sistemaQR/qrcode.html
