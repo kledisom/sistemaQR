@@ -44,4 +44,10 @@ let scanner = new Instascan.Scanner({
     height: auto;
     width: auto;
     `;
-  }
+  };
+
+
+document.addEventListener('keydown', (event) => {
+  console.log('esse é o valor de retorno', event.key)
+});
+
