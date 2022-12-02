@@ -9,7 +9,7 @@ let scanner = new Instascan.Scanner({
   Instascan.Camera.getCameras()
     .then(function (cameras) {
       if (cameras.length > 0) {
-        scanner.start(cameras[0]);
+       // scanner.start(cameras[0]);
         console.log(cameras);
       } else {
         console.error("não encontrou a camera");
