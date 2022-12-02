@@ -10,7 +10,7 @@ let scanner = new Instascan.Scanner({
     .then(function (cameras) {
       if (cameras.length > 0) {
        
-        console.log(cameras);
+        
       } else {
         console.error("não encontrou a camera");
       }
@@ -46,8 +46,14 @@ let scanner = new Instascan.Scanner({
     `;
   };
 
+const arr = []
 
 document.addEventListener('keydown', (event) => {
-  console.log('esse é o valor de retorno', event.key)
+    arr.push(event.key);
+  console.log(event.key);
 });
+
+function teste() {
+ console.log(arr);
+}
 
