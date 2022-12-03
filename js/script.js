@@ -48,12 +48,22 @@ let scanner = new Instascan.Scanner({
 
 const arr = []
 
-document.addEventListener('keydown', (event) => {
-    arr.push(event.key);
+document.addEventListener('keypress', (event) => {
+  arr.push(event.key);
   console.log(event.key);
+
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] == "Enter") {
+      arr.splice(i, i);
+    }
+
+  }
 });
 
 function teste() {
- console.log(arr);
+
+
+  console.log(arr.join(''));
 }
 
