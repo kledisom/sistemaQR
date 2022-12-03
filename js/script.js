@@ -50,8 +50,6 @@ const arr = []
 
 document.addEventListener('keypress', (event) => {
   arr.push(event.key);
-  console.log(event.key);
-
 
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] == "Enter") {
@@ -62,8 +60,6 @@ document.addEventListener('keypress', (event) => {
 });
 
 function teste() {
-
-
   console.log(arr.join(''));
 }
 
