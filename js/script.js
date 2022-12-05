@@ -46,20 +46,8 @@ let scanner = new Instascan.Scanner({
     `;
   };
 
-const arr = []
 
-document.addEventListener('keypress', (event) => {
-  arr.push(event.key);
-
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] == "Enter") {
-      arr.splice(i, i);
-    }
-
-  }
-});
-
-function teste() {
-  console.log(arr.join(''));
+function fnBarcodeScanned(jsonObject) {
+  console.log("Barcode Scanned:{" + JSON.stringify(jsonObject) + "}");
+  document.getElementById('scanData').value = "barcode: " + jsonObject.data;
 }
-
