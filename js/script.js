@@ -47,7 +47,16 @@ let scanner = new Instascan.Scanner({
   };
 
 
+function fnScanEnable() { 
+     EB.Barcode.enable({allDecoders:true},fnBarcodeScanned); 
+      document.getElementById('input-status').value 
+   = "enabled: press HW trigger to capture.";   
+}
+
+
 function fnBarcodeScanned(jsonObject) {
   console.log("Barcode Scanned:{" + JSON.stringify(jsonObject) + "}");
-  document.getElementById('scanData').value = "barcode: " + jsonObject.data;
+  document.getElementById('input-result').value = "barcode: " + jsonObject.data;
 }
+
+EB.Barcode.start()
