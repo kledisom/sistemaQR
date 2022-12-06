@@ -28,18 +28,22 @@
   };
 
 
-function fnScanEnable() { 
-     EB.Barcode.enable({allDecoders:true},fnBarcodeScanned); 
-      document.getElementById('input-status').value 
-   = "enabled: press HW trigger to capture.";   
+document.addEventListener('keypress', (event) => {
+  fnScanEnable()
+});
+
+async function fnScanEnable() {
+  EB.Barcode.enable({ allDecoders: true }, fnBarcodeScanned());
+  document.getElementById('input-status').value
+    = "enabled: press HW trigger to capture.";
+  //EB.Barcode.start()
+  console.log('teste')
 }
 
-EB.Barcode.start()
 
 function fnBarcodeScanned(jsonObject) {
   console.log("Barcode Scanned:{" + JSON.stringify(jsonObject) + "}");
   document.getElementById('input-result').value = "barcode: " + jsonObject.data;
 }
 
-fnScanEnable()
 
