@@ -1,23 +1,4 @@
-let scanner = new Instascan.Scanner({
-    video: document.getElementById("preview"),
-  });
-  scanner.addListener("scan", (content) => {
-    console.log(content);
-    pegaDados(content);
-  });
 
-  Instascan.Camera.getCameras()
-    .then(function (cameras) {
-      if (cameras.length > 0) {
-       
-        
-      } else {
-        console.error("não encontrou a camera");
-      }
-    })
-    .catch(function (e) {
-      console.error(e);
-    });
 
  // api comunication function
   function pegaDados(content) {
@@ -53,10 +34,12 @@ function fnScanEnable() {
    = "enabled: press HW trigger to capture.";   
 }
 
+EB.Barcode.start()
 
 function fnBarcodeScanned(jsonObject) {
   console.log("Barcode Scanned:{" + JSON.stringify(jsonObject) + "}");
   document.getElementById('input-result').value = "barcode: " + jsonObject.data;
 }
 
-EB.Barcode.start()
+fnScanEnable()
+
