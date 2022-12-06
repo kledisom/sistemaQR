@@ -47,3 +47,5 @@ function fnBarcodeScanned(jsonObject) {
 }
 
 
+console.log('test', EB)
+
