@@ -36,7 +36,7 @@ async function fnScanEnable() {
   EB.Barcode.enable({ allDecoders: true }, fnBarcodeScanned());
   document.getElementById('input-status').value
     = "enabled: press HW trigger to capture.";
-  //EB.Barcode.start()
+
   console.log('teste')
 }
 
